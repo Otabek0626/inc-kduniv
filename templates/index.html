@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="main-content">
+
+    <section class="apply-wrap" style="height: 80vh;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>2023 KDU International Networking Camp (INC)</h2>
+            <h6>The KDU Global International Networking Camp (INC) will brighten up your summer with unforgettable memories and hands-on experiences.</h6>
+            <a href="https://global.kduniv.ac.kr/global//page/courses.php">2023 INC Program</a>
+            <a href="" target="_blank" title="open in a new window" rel="noopener noreferrer">Apply Now (open until 30 April, 2023)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+    
+  
+    <div class="video-overlay">
+      <video playsinline="" autoplay="autoplay" muted="muted" loop="" class="video-bg" aria-label="Background Video">
+        <!--source src="https://www.harvard.edu/wp-content/uploads/2021/09/renewable-energy-timelapse-SBV-305734693-HD.mp4" type="video/mp4"-->
+        <source src="{% static 'assets/2021_movie_fall.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+  
+  </section>
+
+  {% endblock %}

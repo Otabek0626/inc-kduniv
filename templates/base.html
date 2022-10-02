@@ -1,0 +1,426 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://global.kduniv.ac.kr/global//favicon.ico"
+      type="image/x-icon"
+    />
+
+    <meta
+      name="description"
+      content="Kyungdong University Global (Korea)'s intensive four-week summer school taught by distinguished KDU and visiting faculty members"
+    />
+    <title>
+      Kyungdong University Global - International Networking Camp (INC)
+    </title>
+    <link
+      href="{% static 'assets/notosanskr.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'assets/nanumgothic.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'assets/css.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{% static 'assets/font-awesome.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'assets/default.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/mystyle.css' %}" />
+    <script
+      type="text/javascript"
+      src="{% static 'assets/jquery.min.js' %}"
+    ></script>
+    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/myfunction.js' %}"></script>
+
+    <script src="{% static 'assets/jquery.menu' %}"></script>
+    <script src="{% static 'assets/common' %}"></script>
+    <script src="{% static 'assets/wrest' %}"></script>
+    <script src="{% static 'assets/jquery.flexslider-min.js' %}"></script>
+  </head>
+  <body id="" class="mainpage">
+    <section class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="logo">
+              <a href="https://global.kduniv.ac.kr/global//index.php"
+                ><img
+                  src="https://arjk.net/neorix/up_files_board_etc/20150310132650-13cd45b7ee86ac6168cf9f586ba12425.jpg"
+                  alt=""
+                  class="img-responsive"
+                  style="width: 30vh"
+              /></a>
+            </h1>
+          </div>
+
+          <div class="top-nav-sub">
+            <ul>
+              <li>
+                <a href="https://global.kduniv.ac.kr/global/">Contact us</a>
+              </li>
+              <li>
+                <a href="{% url 'form' %}" target="_blank"><em>Apply Now</em></a>
+              </li>
+            </ul>
+          </div>
+          <!-- / .top-nav-sub -->
+        </div>
+      </div>
+    </section>
+    <nav id="gnb" class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#nav-top"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-top">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="dropdown me_code10">
+              <a
+                href="#"
+                target="_self"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >ABOUT
+              </a>
+              <ul class="dropdown-menu">
+                <li></li>
+                <li>
+                  <a href="{% url 'main' 'president_message' %}" target="_self"
+                    >President Message</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'introduction' %}" target="_self"
+                    >Introduction</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'about_kdu_global' %}" target="_self"
+                    >About KDU Global</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'why_kdu_global' %}" target="_self"
+                    >Why KDU Global</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'summer_in_sokcho' %}" target="_self"
+                    >Summer in Sokcho</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'contact_us' %}" target="_self"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown me_code20">
+              <a
+                href="#"
+                target="_self"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >PROGRAM
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'main' 'program_schedule' %}" target="_self"
+                    >Program Schedule</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'program_theme' %}" target="_self"
+                    >Program Theme (Course)</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'scholarship_and_fees' %}" target="_self"
+                    >Scholarship and Fee</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'visa' %}" target="_self"
+                    >Visa</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'credit_transfer' %}" target="_self"
+                    >Credit Transfer</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'main' 'certificate' %}" target="_self"
+                    >Certificate</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown me_code30">
+              <a
+                href="#"
+                target="_self"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >APPLICATION
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'main' 'eligibility' %}" target="_self"
+                    >Eligibility</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'required_documents' %}"
+                    target="_self"
+                    >Required Documents (Entry Requirements)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'application_procedure' %}"
+                    target="_self"
+                    >Application Procedure</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'course_registration' %}"
+                    target="_self"
+                    >Course Registration</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'visa_and_travel_guidlines' %}"
+                    target="_self"
+                    >Visa and Travel Guidelines</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'health_insurance' %}"
+                    target="_self"
+                    >Health Insurance</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown me_code50">
+              <a
+                href="#"
+                target="_self"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >FAQ
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="{% url 'main' 'faq' %}"
+                    target="_self"
+                    >Visa</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'faq' %}"
+                    target="_self"
+                    >Health Insurance</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'faq' %}"
+                    target="_self"
+                    >Accommodation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'faq' %}"
+                    target="_self"
+                    >Credit Transfer</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown me_code50">
+              <a
+                href="#"
+                target="_self"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >MEDIA
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >WhatsApp</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >Twitter</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown me_code60">
+              <a
+                href="{% url 'main' 'notice' %}"
+                target="_self"
+                
+                >NOTICE
+              </a>
+            </li>
+            <li class="dropdown me_code60">
+              <a
+                href="{% url 'main' 'contact_us' %}"
+                target="_self"
+                
+                >CONTACT US
+              </a>
+            </li>
+            <li class="dropdown me_code80 mobileonly">
+              <a
+                href="{% url 'main' 'form' %}"
+                target="_blank"
+                title="open in a new window"
+                style="color: #ff3"
+                rel="noopener noreferrer"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Apply Now</a
+              >
+            </li>
+          </ul>
+          <!-- / navbar-nav -->
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- / # gnb -->
+
+    <link rel="stylesheet" href="{% static 'assets/bootstrap-icons.css' %}" />
+
+    {% block content %}{% endblock %}
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              src="{% static 'assets/bg.png' %}"
+              alt=""
+              class="logo-alt img-responsive"
+              style="width: 100vh"
+            />
+          </div>
+          <div class="col-md-9">
+            <p class="heading" style="color: #ffff00">
+              International Network Camp (INC), KDU Global Campus
+            </p>
+            <p>
+              <b><span style="color: #ffff00">Global Campus (Gosung): </span></b
+              >46 4-gil, Bongpo, Gosung, Gangwondo, 24764
+            </p>
+            <p>
+              <b
+                ><span style="color: #ffff00"
+                  >Metropol Campus (Yangju):
+                </span></b
+              >27 Kyungdong University-ro, Yangju, Gyeonggido, 11458
+            </p>
+            <p>
+              <b
+                ><span style="color: #ffff00"
+                  >Medical Campus (WonjuMunmak):
+                </span></b
+              >815 Gyeonhwon-ro, Munmak, Wonju, Gangwondo, 24695
+            </p>
+
+            <p>
+              <b style="color: #ffff00">Email: </b>
+              <a href="info@kduniv.ac.kr">info@kduniv.ac.kr</a>
+            </p>
+            <p>
+              <b style="color: #ffff00">SNS: </b>
+              <a href="https://www.facebook.com/prof.john.lee"
+                >https://www.facebook.com/prof.john.lee</a
+              >
+            </p>
+
+            <p class="copyright">
+              Copyright© 2023 Kyungding University Global. All Rights Reserved.
+            </p>
+          </div>
+          <!-- / .col-md-8 -->
+        </div>
+        <!-- / .row -->
+      </div>
+      <!-- // container -->
+    </footer>
+  </body>
+</html>
