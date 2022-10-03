@@ -16,9 +16,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <title>Appliaction Form For INC</title>
   </head>
@@ -48,8 +46,10 @@
       >
         Appendix I: Application Form (Online Database)
       </div>
+      
 
-      <form style="margin-top: 2%">
+      <form action="" method="post" style="margin-top: 2%" enctype="multipart/form-data">
+        {% csrf_token %}
         <div
           style="
             margin: 2% 1% 2% 0%;
@@ -66,27 +66,33 @@
             <div class="form-group">
               <label for="firstName">1. First Name</label>
               <input
+                required
                 type="text"
                 class="form-control"
                 id="firstName"
+                name="firstName"
                 placeholder="First Name"
               />
             </div>
             <div class="form-group">
               <label for="middleName">2. Middle Name</label>
               <input
+                required
                 type="text"
                 class="form-control"
                 id="middleName"
+                name="middleName"
                 placeholder="Middle Name"
               />
             </div>
             <div class="form-group">
               <label for="lastName">3. Last Name</label>
               <input
+                required
                 type="text"
                 class="form-control"
                 id="lastName"
+                name="lastName"
                 placeholder="Last Name"
               />
             </div>
@@ -94,38 +100,32 @@
 
           <div class="form-group col-md-3">
             <div class="card" style="width: 13rem; height: auto">
-              <label for="photo"> <img
+              <label for="photo">
+                <img
                   class="card-img-top"
                   src="{% static 'assets/self.jpg' %}"
                   alt="Card image cap"
-                  id = "imgPreview"
-              ></label>
-              <input hidden type="file" name="photograph"
-                   id="photo" required="true" />
-              
+                  id="imgPreview"
+              /></label>
+              <input
+                required
+                hidden
+                type="file"
+                name="photograph"
+                id="photo"
+                
+              />
             </div>
             <div class="row" style="margin: 5px">
               <div class="col-6">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="male"
-                  value="male"
-                />
+                <input required class="form-check-input" type="radio" name="gender" id="male" value="male">
                 <label class="form-check-label" for="male">Male</label>
-              </div>
+            </div>
 
-              <div class="col-6">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="female"
-                  value="female"
-                />
+            <div class="col-6">
+                <input required class="form-check-input" type="radio" name="gender" id="female" value="female">
                 <label class="form-check-label" for="female">Female</label>
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -133,9 +133,11 @@
           <div class="form-group col-md-4">
             <label for="country">4. Country</label>
             <input
+              required
               type="text"
               class="form-control"
               id="country"
+              name="country"
               placeholder="Country"
             />
           </div>
@@ -143,9 +145,11 @@
           <div class="form-group col-md-4">
             <label for="nationality">5. Nationality</label>
             <input
+              required
               type="text"
               class="form-control"
               id="nationality"
+              name="nationality"
               placeholder="Nationality"
             />
           </div>
@@ -153,9 +157,11 @@
           <div class="form-group col-md-4">
             <label for="passport">6. Passport Number</label>
             <input
+              required
               type="text"
               class="form-control"
               id="passport"
+              name="passport"
               placeholder="Passport Number"
             />
           </div>
@@ -175,18 +181,22 @@
         <div class="form-group">
           <label for="homeAddress">7. Home Address</label>
           <input
+            required
             type="text"
             class="form-control"
             id="homeAddress"
+            name="homeAddress"
             placeholder="Home Address"
           />
         </div>
         <div class="form-group">
           <label for="currentAddress">8. Current Address</label>
           <input
+            required
             type="text"
             class="form-control"
             id="currentAddress"
+            name="currentAddress"
             placeholder="Current Address"
           />
         </div>
@@ -195,19 +205,23 @@
           <div class="form-group col-md-4">
             <label for="homeTelNumber">9. Tel. number</label>
             <input
+              required
               type="text"
               class="form-control"
               id="homeTelNumber"
+              name="homeTelNumber"
               placeholder="Home"
             />
           </div>
 
           <div class="form-group col-md-4">
-            <label for="homeTelNumber">9. Tel. number</label>
+            <label for="MobileTelNumber">9. Tel. number</label>
             <input
+              required
               type="text"
               class="form-control"
-              id="homeTelNumber"
+              id="MobileTelNumber"
+              name="MobileTelNumber"
               placeholder="Mobile"
             />
           </div>
@@ -215,9 +229,11 @@
           <div class="form-group col-md-4">
             <label for="email">10. Email</label>
             <input
+              required
               type="email"
               class="form-control"
               id="email"
+              name="email"
               placeholder="Email"
             />
           </div>
@@ -239,18 +255,22 @@
           <div class="form-group col-md-6">
             <label for="institution">11. Name of the Institution</label>
             <input
+              required
               type="text"
               class="form-control"
               id="name_institution"
+              name="name_institution"
               placeholder="Institution"
             />
           </div>
           <div class="form-group col-md-6">
             <label for="Address">12. Address</label>
             <input
+              required
               type="text"
               class="form-control"
               id="address_inst"
+              name="address_inst"
               placeholder="Address"
             />
           </div>
@@ -258,39 +278,28 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label>13. Degree</label>
+            <label>13. Current or Last Degree</label>
             <div class="form-row" style="margin-left: 3%">
-              <div class="form-check col-6">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="defaultCheck1"
-                />
-                <label class="form-check-label" for="defaultCheck1">
-                  Undergraduate
-                </label>
-              </div>
+              <div class="col-6">
+                <input required class="form-check-input" type="radio" name="degree" id="undergraduate" value="undergraduate">
+                <label class="form-check-label" for="undergraduate">Undergraduate</label>
+            </div>
 
-              <div class="form-check col-6">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="graduate"
-                />
-                <label class="form-check-label" for="graduate">
-                  Graduate
-                </label>
-              </div>
+            <div class="col-6">
+                <input required class="form-check-input" type="radio" name="degree" id="graduate" value="graduate">
+                <label class="form-check-label" for="graduate">Graduate</label>
+            </div>
+              
             </div>
           </div>
           <div class="form-group col-md-6">
             <label for="department">14. Department</label>
             <input
+              required
               type="text"
               class="form-control"
               id="department"
+              name="department"
               placeholder="Department"
             />
           </div>
@@ -300,91 +309,50 @@
           <div class="form-group col-md-4">
             <label for="major">15. Major</label>
             <input
+              required
               type="text"
               class="form-control"
               id="major"
+              name="major"
               placeholder="Major"
             />
           </div>
 
           <div class="form-group col-md-4">
-            <label for="homeTelNumber">16. Tel. number</label>
+            <label for="institureTel">16. Tel. number</label>
             <input
+              required
               type="text"
               class="form-control"
-              id="homeTelNumber"
+              id="institureTel"
+              name="institureTel"
               placeholder="Mobile"
             />
           </div>
 
           <div class="form-group col-md-4">
-            <label for="email">17. Email</label>
+            <label for="instituteEmail">17. Email</label>
             <input
+              required
               type="email"
               class="form-control"
-              id="email"
+              id="instituteEmail"
+              name="instituteEmail"
               placeholder="Email"
             />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="languages">18. Languages spoken</label>
+          <label for="languages">18. Please indicate your level of English proficiency</label>
           <div class="row" style="margin: 5px">
             <div class="col-2">
               <input
-                class="form-check-input"
+                required
+                class="form-check-input
+                  required"
                 type="radio"
-                name="languages"
-                id="english"
-                value="english"
-              />
-              <label class="form-check-label" for="english">English</label>
-            </div>
-
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="languages"
-                id="korean"
-                value="korean"
-              />
-              <label class="form-check-label" for="korean">English</label>
-            </div>
-
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="languages"
-                id="others"
-                value="others"
-              />
-              <label class="form-check-label" for="others"
-                >Others(please, specify)</label
-              >
-            </div>
-            <div class="col-4">
-              <input
-                type="text"
-                class="form-control"
-                id="languages"
-                placeholder="Others"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="proficiency"
-            >19. Please indicate your level of Korean proficiency</label
-          >
-          <div class="row" style="margin: 5px">
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="proficiency"
+                name="proficiencyEnglish"
                 id="None"
                 value="None"
               />
@@ -393,9 +361,11 @@
 
             <div class="col-2">
               <input
-                class="form-check-input"
+                required
+                class="form-check-input
+                  required"
                 type="radio"
-                name="proficiency"
+                name="proficiencyEnglish"
                 id="Beginner"
                 value="Beginner"
               />
@@ -404,9 +374,11 @@
 
             <div class="col-2">
               <input
-                class="form-check-input"
+                required
+                class="form-check-input
+                  required"
                 type="radio"
-                name="proficiency"
+                name="proficiencyEnglish"
                 id="Intermediate"
                 value="Intermediate"
               />
@@ -417,9 +389,71 @@
 
             <div class="col-2">
               <input
-                class="form-check-input"
+                required
+                class="form-check-input
+                  required"
                 type="radio"
-                name="proficiency"
+                name="proficiencyEnglish"
+                id="Advanced"
+                value="Advanced"
+              />
+              <label class="form-check-label" for="Advanced">Advanced</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="proficiency"
+            >19. Please indicate your level of Korean proficiency</label
+          >
+          <div class="row" style="margin: 5px">
+            <div class="col-2">
+              <input
+                required
+                class="form-check-input
+                  required"
+                type="radio"
+                name="proficiencyKorean"
+                id="None"
+                value="None"
+              />
+              <label class="form-check-label" for="None">None</label>
+            </div>
+
+            <div class="col-2">
+              <input
+                required
+                class="form-check-input
+                  required"
+                type="radio"
+                name="proficiencyKorean"
+                id="Beginner"
+                value="Beginner"
+              />
+              <label class="form-check-label" for="Beginner">Beginner</label>
+            </div>
+
+            <div class="col-2">
+              <input
+                required
+                class="form-check-input
+                  required"
+                type="radio"
+                name="proficiencyKorean"
+                id="Intermediate"
+                value="Intermediate"
+              />
+              <label class="form-check-label" for="Intermediate"
+                >Intermediate</label
+              >
+            </div>
+
+            <div class="col-2">
+              <input
+                required
+                class="form-check-input
+                  required"
+                type="radio"
+                name="proficiencyKorean"
                 id="Advanced"
                 value="Advanced"
               />
@@ -449,9 +483,9 @@
             Program.
           </p>
 
-          <textarea name="Text1" style="width: 100%" rows="20"></textarea>
+          <textarea name="Statement" style="width: 100%" rows="20"></textarea>
         </div>
-
+        
         <button
           type="submit"
           class="btn btn-success form-control"
@@ -462,22 +496,19 @@
       </form>
     </div>
 
-
-
     <script>
-        $(document).ready(() => {
-            $("#photo").change(function () {
-                const file = this.files[0];
-                if (file) {
-                    let reader = new FileReader();
-                    reader.onload = function (event) {
-                        $("#imgPreview")
-                          .attr("src", event.target.result);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+      $(document).ready(() => {
+        $("#photo").change(function () {
+          const file = this.files[0];
+          if (file) {
+            let reader = new FileReader();
+            reader.onload = function (event) {
+              $("#imgPreview").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+          }
         });
+      });
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
