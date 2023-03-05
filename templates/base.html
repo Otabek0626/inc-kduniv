@@ -111,11 +111,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li></li>
-                <li>
-                  <a href="{% url 'main' 'president_message' %}" target="_self"
-                    >President Message</a
-                  >
-                </li>
+               
                 <li>
                   <a href="{% url 'main' 'introduction' %}" target="_self"
                     >Introduction</a
@@ -133,7 +129,7 @@
                 </li>
                 <li>
                   <a href="{% url 'main' 'summer_in_sokcho' %}" target="_self"
-                    >Summer in Sokcho</a
+                    >Summer in Sokcho/Goseong</a
                   >
                 </li>
                 <li>
@@ -155,34 +151,28 @@
                 >PROGRAM
               </a>
               <ul class="dropdown-menu">
+                
+                <li>
+                  <a href="{% url 'main' 'program_theme' %}" target="_self"
+                    >Overview</a
+                  >
+                </li>
+                
                 <li>
                   <a href="{% url 'main' 'program_schedule' %}" target="_self"
                     >Program Schedule</a
                   >
                 </li>
+                
                 <li>
-                  <a href="{% url 'main' 'program_theme' %}" target="_self"
-                    >Program Theme (Course)</a
+                  <a href="{% url 'main' 'classes_and_activities' %}" target="_self"
+                    >Classes and Activities</a
                   >
                 </li>
+                           
                 <li>
-                  <a href="{% url 'main' 'scholarship_and_fees' %}" target="_self"
-                    >Scholarship and Fee</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'main' 'visa' %}" target="_self"
-                    >Visa</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'main' 'credit_transfer' %}" target="_self"
-                    >Credit Transfer</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'main' 'certificate' %}" target="_self"
-                    >Certificate</a
+                  <a href="{% url 'main' 'accommodation' %}" target="_self"
+                    >Accommodation</a
                   >
                 </li>
               </ul>
@@ -201,16 +191,15 @@
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'main' 'eligibility' %}" target="_self"
-                    >Eligibility</a
+                    >Entry Requirements</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="{% url 'main' 'required_documents' %}"
-                    target="_self"
-                    >Required Documents (Entry Requirements)</a
+                  <a href="{% url 'main' 'scholarship_and_fees' %}" target="_self"
+                    >Scholarship and Fee</a
                   >
                 </li>
+              
                 <li>
                   <a
                     href="{% url 'main' 'application_procedure' %}"
@@ -218,20 +207,13 @@
                     >Application Procedure</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'course_registration' %}"
-                    target="_self"
-                    >Course Registration</a
+                
+                 <li>
+                  <a href="{% url 'main' 'visa' %}" target="_self"
+                    >Visa</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'visa_and_travel_guidlines' %}"
-                    target="_self"
-                    >Visa and Travel Guidelines</a
-                  >
-                </li>
+                
                 <li>
                   <a
                     href="{% url 'main' 'health_insurance' %}"
@@ -241,48 +223,7 @@
                 </li>
               </ul>
             </li>
-            <li class="dropdown me_code50">
-              <a
-                href="#"
-                target="_self"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >FAQ
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a
-                    href="{% url 'main' 'faq' %}"
-                    target="_self"
-                    >Visa</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'faq' %}"
-                    target="_self"
-                    >Health Insurance</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'faq' %}"
-                    target="_self"
-                    >Accommodation</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'faq' %}"
-                    target="_self"
-                    >Credit Transfer</a
-                  >
-                </li>
-              </ul>
-            </li>
+           
             <li class="dropdown me_code50">
               <a
                 href="#"
@@ -299,40 +240,63 @@
                   <a
                     href="{% url 'main' 'president_message' %}"
                     target="_self"
-                    >WhatsApp</a
+                    >Downloads</a
                   >
                 </li>
                 <li>
                   <a
                     href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >Galleries</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'president_message' %}"
+                    target="_self"
+                    >Students Testimonials</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/KDUGlobalCampus"
                     target="_self"
                     >Facebook</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'president_message' %}"
-                    target="_self"
-                    >Instagram</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'main' 'president_message' %}"
-                    target="_self"
-                    >Twitter</a
-                  >
-                </li>
+               
               </ul>
             </li>
-            <li class="dropdown me_code60">
+             <li class="dropdown me_code50">
               <a
-                href="{% url 'main' 'notice' %}"
+                href="#"
                 target="_self"
-                
-                >NOTICE
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Notice
               </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="{% url 'main' 'notice' %}"
+                    target="_self"
+                    >Announcements</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{% url 'main' 'faq' %}"
+                    target="_self"
+                    >FAQ</a
+                  >
+                </li>
+               
+              </ul>
             </li>
+           
             <li class="dropdown me_code60">
               <a
                 href="{% url 'main' 'contact_us' %}"
