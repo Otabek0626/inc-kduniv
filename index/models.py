@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 def upload_location(instance, filename):
@@ -32,6 +32,7 @@ class Profile(models.Model):
     english = models.CharField(max_length = 50)
     korean = models.CharField(max_length = 50)
     statement_of_interest = models.TextField()
- 
+    applied_at = models.DateTimeField(default=datetime.now, blank=True)
+    
     def __str__(self):
-        return self.email
+        return f"{self.first_name}, {self.gender}, {self.country}, {self.email}, {self.email}, {self.applied_at}"
