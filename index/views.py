@@ -1,12 +1,22 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Profile
+from .models import Profile, Navigation, Content
+from django.db.models import Prefetch
 # Create your views here.
 def main(request, html='index'):
+    data = {}
+    navs = Navigation.objects.prefetch_related(Prefetch('contents', queryset=Content.objects.all())).all().order_by('order')
+    
+    
+    context = {
+        "data": navs
+    }
     try:
-        return render(request, f"{html}.html")
+        context['content'] = Content.objects.filter(id=int(html)).first()
+        print(context)
+        return render(request, f"main.html", context)
     except:
-        return render(request, f"index.html")
+        return render(request, f"index.html", context)
 
 
 def form(request):

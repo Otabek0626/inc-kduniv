@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="header-page">
+    <div class="container">
+        <h1 id="content-title" data-subheading="{{content.navigation}}"><span>{{content.title}}</span></h1>
+    </div>
+    <div class="lnb">
+        <ul class="breadcrumb container">
+            <li><a href="/">HOME</a></li>
+            <li>{{content.navigation}}</li>
+            <li>{{content.title}}</li>
+        </ul>
+    </div>
+</section>
+<div id="content" class="container con-container">
+    <!-- CONTENT -->
+
+    {{content.content|safe}}
+    
+</div>
+
+
+{% endblock %}

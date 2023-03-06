@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 def upload_location(instance, filename):
@@ -7,6 +8,28 @@ def upload_location(instance, filename):
     return 'static/assets/images/%s.%s' % (f'{instance.email}_{instance.first_name}', extension)
 
 
+class Navigation(models.Model):
+    title = models.CharField(max_length = 100)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return self.title
+
+
+
+class Content(models.Model):
+    title = models.CharField(max_length = 100)
+    content = RichTextField()
+    order = models.IntegerField()
+    
+    navigation = models.ForeignKey(
+        Navigation,
+        on_delete=models.CASCADE,
+        related_name='contents'
+    )
+
+    def __str__(self):
+        return self.title
 
 class Profile(models.Model):
     first_name = models.CharField(max_length = 50)
