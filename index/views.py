@@ -13,7 +13,7 @@ def main(request, html='index'):
     }
     try:
         context['content'] = Content.objects.filter(id=int(html)).first()
-        print(context)
+
         return render(request, f"main.html", context)
     except:
         return render(request, f"index.html", context)
