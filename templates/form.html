@@ -133,10 +133,10 @@
           <div class="form-group col-md-4">
             <label for="country">4. Country</label>
             <select class="form-control" name="country" id="country" required>
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="">--Please choose a country--</option>
+              {% for country in countries %}
+                <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
             
           </div>
