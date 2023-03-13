@@ -98,11 +98,7 @@
         </div>
         <div class="collapse navbar-collapse" id="nav-top">
           <ul class="nav navbar-nav navbar-center">
-            <li>
-              <a href="{% url 'main' %}" target="_self"
-                >MAIN</a
-              >
-            </li>
+            
             {% for nav in data %}
 
              {% if nav.contents.all|length <= 1 %}
