@@ -17,7 +17,7 @@
       content="Kyungdong University Global (Korea)'s intensive four-week summer school taught by distinguished KDU and visiting faculty members"
     />
     <title>
-      Kyungdong University Global - International Networking Camp (INC)
+      KDU Global Immersion Program (KGIP)
     </title>
     <link
       href="{% static 'assets/notosanskr.css' %}"
@@ -56,9 +56,9 @@
         <div class="row">
           <div class="col-md-12">
             <h1 class="logo">
-              <a href="https://global.kduniv.ac.kr/global//index.php"
+              <a href="{% url 'main' %}"
                 ><img
-                  src="https://arjk.net/neorix/up_files_board_etc/20150310132650-13cd45b7ee86ac6168cf9f586ba12425.jpg"
+                src="{% static 'assets/Full.png' %}"
                   alt=""
                   class="img-responsive"
                   style="width: 30vh"
@@ -69,10 +69,10 @@
           <div class="top-nav-sub">
             <ul>
               <li>
-                <a href="https://global.kduniv.ac.kr/global/">Contact us</a>
+                <a href="{% url 'main' 7 %}">CONTACT US</a>
               </li>
               <li>
-                <a href="{% url 'form' %}" target="_blank"><em>Apply Now</em></a>
+                <a href="{% url 'form' %}"><em>APPLY NOW</em></a>
               </li>
             </ul>
           </div>
@@ -101,7 +101,7 @@
             
             {% for nav in data %}
 
-             {% if nav.contents.all|length <= 1 %}
+             {% if nav.contents.all|length < 2 %}
              {% for sub in nav.contents.all %}
               <li class="dropdown me_code60">
                 <a
@@ -126,9 +126,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   {% for sub in nav.contents.all %}
-                    {% if sub.pk == 14 %}
+                    
+                    {% if sub.pk == 22 %}
                     <li>
-                      <a href="{% url 'main' %}" target="_self"
+                      <a href="{% url 'main' 'form' %}" target="_self"
                         >{{sub}}</a
                       >
                     </li>
@@ -152,13 +153,7 @@
             <li class="dropdown me_code80 mobileonly">
               <a
                 href="{% url 'main' 'form' %}"
-                target="_blank"
-                title="open in a new window"
-                style="color: #ff3"
-                rel="noopener noreferrer"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
+                
                 >Apply Now</a
               >
             </li>
@@ -180,38 +175,26 @@
         <div class="row">
           <div class="col-md-3">
             <img
-              src="{% static 'assets/bg.png' %}"
+              src="{% static 'assets/Logo.png' %}"
               alt=""
               class="logo-alt img-responsive"
               style="width: 100vh"
             />
           </div>
           <div class="col-md-9">
-            <p class="heading" style="color: #ffff00">
-              International Network Camp (INC), KDU Global Campus
+            
+            <p class="heading" style="color: #ffff00;">
+              KDU Global Immersion Program (KGIP) 2023
             </p>
             <p>
-              <b><span style="color: #ffff00">Global Campus (Gosung): </span></b
-              >46 4-gil, Bongpo, Gosung, Gangwondo, 24764
+              <b><span style="color: #ffff00">Address: </span></b
+              >46 Bongpo 4-gil, Goseong-gun, Gangwondo, South Korea 24764
             </p>
-            <p>
-              <b
-                ><span style="color: #ffff00"
-                  >Metropol Campus (Yangju):
-                </span></b
-              >27 Kyungdong University-ro, Yangju, Gyeonggido, 11458
-            </p>
-            <p>
-              <b
-                ><span style="color: #ffff00"
-                  >Medical Campus (WonjuMunmak):
-                </span></b
-              >815 Gyeonhwon-ro, Munmak, Wonju, Gangwondo, 24695
-            </p>
+            
 
             <p>
               <b style="color: #ffff00">Email: </b>
-              <a href="info@kduniv.ac.kr">info@kduniv.ac.kr</a>
+              <a href="info@kduglobal.net">kgip@kduglobal.net</a>
             </p>
             <p>
               <b style="color: #ffff00">SNS: </b>
@@ -221,7 +204,7 @@
             </p>
 
             <p class="copyright">
-              Copyright© 2023 Kyungding University Global. All Rights Reserved.
+              Copyright© 2023 Kyungdong University Global. All Rights Reserved.
             </p>
           </div>
           <!-- / .col-md-8 -->

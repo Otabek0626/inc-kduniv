@@ -2,12 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    
+    
 
     <!-- Bootstrap CSS -->
     <link
@@ -17,6 +13,12 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <!-- Include Bootstrap Datepicker CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+      <!-- Custom Styles -->
 
     <title>Appliaction Form For INC</title>
   </head>
@@ -32,7 +34,7 @@
           text-align: center;
         "
       >
-        Application Form for INC
+      Application for KDU Global Immersion Program 2023
       </div>
       <div
         style="
@@ -44,7 +46,7 @@
           text-align: center;
         "
       >
-        Appendix I: Application Form (Online Database)
+       
       </div>
       
 
@@ -64,7 +66,18 @@
         <div class="form-row">
           <div class="form-group col-md-9">
             <div class="form-group">
-              <label for="firstName">1. First Name</label>
+              <label for="lastName">1. Last Name/Surname (as in passport)</label>
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="firstName">2. First Name(s)</label>
               <input
                 required
                 type="text"
@@ -75,27 +88,42 @@
               />
             </div>
             <div class="form-group">
-              <label for="middleName">2. Middle Name</label>
+              <label for="dateofbirth">3. Date of Birth</label>
               <input
                 required
                 type="text"
-                class="form-control"
-                id="middleName"
-                name="middleName"
-                placeholder="Middle Name"
+                class="form-control datepicker"
+                id="dateofbirth"
+                name="dateofbirth"
+                placeholder="Date Of Birth"
+                
               />
             </div>
+
             <div class="form-group">
-              <label for="lastName">3. Last Name</label>
-              <input
-                required
-                type="text"
-                class="form-control"
-                id="lastName"
-                name="lastName"
-                placeholder="Last Name"
-              />
+              <label for="">5. Gender</label>
+              <div class="row" style="margin: 5px">
+              
+                <div class="col-3">
+                  <input required class="form-check-input" type="radio" name="gender" id="male" value="male">
+                  <label class="form-check-label" for="male">Male</label>
+               </div>
+  
+              <div class="col-3">
+                  <input required class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">Female</label>
+              </div>
+  
+              <div class="col-3">
+                <input required class="form-check-input" type="radio" name="gender" id="others" value="others">
+                <label class="form-check-label" for="others">Others</label>
             </div>
+  
+              </div>
+            </div>
+
+            
+            
           </div>
 
           <div class="form-group col-md-3">
@@ -117,21 +145,14 @@
               />
             </div>
             <div class="row" style="margin: 5px">
-              <div class="col-6">
-                <input required class="form-check-input" type="radio" name="gender" id="male" value="male">
-                <label class="form-check-label" for="male">Male</label>
+              <label for="">4. Photo Upload</label>
             </div>
-
-            <div class="col-6">
-                <input required class="form-check-input" type="radio" name="gender" id="female" value="female">
-                <label class="form-check-label" for="female">Female</label>
-            </div>
-            </div>
+           
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="country">4. Country</label>
+            <label for="country">6. Country of Citizenship</label>
             <select class="form-control" name="country" id="country" required>
               <option value="">--Please choose a country--</option>
               {% for country in countries %}
@@ -142,19 +163,17 @@
           </div>
 
           <div class="form-group col-md-4">
-            <label for="nationality">5. Nationality</label>
-            <input
-              required
-              type="text"
-              class="form-control"
-              id="nationality"
-              name="nationality"
-              placeholder="Nationality"
-            />
+            <label for="nationality">7. Country of Residence</label>
+            <select class="form-control" name="nationality" id="nationality" required>
+              <option value="">--Please choose a country--</option>
+              {% for country in countries %}
+                <option value="{{country}}">{{country}}</option>
+              {% endfor %}
+            </select>
           </div>
 
           <div class="form-group col-md-4">
-            <label for="passport">6. Passport Number</label>
+            <label for="passport">8. Passport Number</label>
             <input
               required
               type="text"
@@ -175,10 +194,10 @@
             justify-content: center;
           "
         >
-          II. Contact Informations
+          II. Contact Information
         </div>
         <div class="form-group">
-          <label for="homeAddress">7. Home Address</label>
+          <label for="homeAddress">9. Home Address</label>
           <input
             required
             type="text"
@@ -189,7 +208,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="currentAddress">8. Current Address</label>
+          <label for="currentAddress">10. Current Address</label>
           <input
             required
             type="text"
@@ -202,19 +221,7 @@
 
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="homeTelNumber">9. Tel. number</label>
-            <input
-              required
-              type="text"
-              class="form-control"
-              id="homeTelNumber"
-              name="homeTelNumber"
-              placeholder="Home"
-            />
-          </div>
-
-          <div class="form-group col-md-4">
-            <label for="MobileTelNumber">9. Tel. number</label>
+            <label for="MobileTelNumber">11. Mobile NO.</label>
             <input
               required
               type="text"
@@ -226,7 +233,19 @@
           </div>
 
           <div class="form-group col-md-4">
-            <label for="email">10. Email</label>
+            <label for="homeTelNumber">12. Tel NO.</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="homeTelNumber"
+              name="homeTelNumber"
+              placeholder="Home"
+            />
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="email">13. Email</label>
             <input
               required
               type="email"
@@ -252,7 +271,7 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="institution">11. Name of the Institution</label>
+            <label for="institution">14. Name of University/Institution</label>
             <input
               required
               type="text"
@@ -263,7 +282,7 @@
             />
           </div>
           <div class="form-group col-md-6">
-            <label for="Address">12. Address</label>
+            <label for="Address">15. Address</label>
             <input
               required
               type="text"
@@ -277,7 +296,7 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label>13. Current or Last Degree</label>
+            <label>16. Enrollment</label>
             <div class="form-row" style="margin-left: 3%">
               <div class="col-6">
                 <input required class="form-check-input" type="radio" name="degree" id="undergraduate" value="undergraduate">
@@ -292,7 +311,7 @@
             </div>
           </div>
           <div class="form-group col-md-6">
-            <label for="department">14. Department</label>
+            <label for="department">17. Department/Major</label>
             <input
               required
               type="text"
@@ -306,19 +325,19 @@
 
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="major">15. Major</label>
+            <label for="major">18. Year</label>
             <input
               required
               type="text"
               class="form-control"
               id="major"
               name="major"
-              placeholder="Major"
+              placeholder="Year"
             />
           </div>
 
           <div class="form-group col-md-4">
-            <label for="institureTel">16. Tel. number</label>
+            <label for="institureTel">19. Tel NO.</label>
             <input
               required
               type="text"
@@ -330,7 +349,7 @@
           </div>
 
           <div class="form-group col-md-4">
-            <label for="instituteEmail">17. Email</label>
+            <label for="instituteEmail">20. Email</label>
             <input
               required
               type="email"
@@ -343,7 +362,7 @@
         </div>
 
         <div class="form-group">
-          <label for="languages">18. Please indicate your level of English proficiency</label>
+          <label for="languages">21. Please indicate your level of English proficiency</label>
           <div class="row" style="margin: 5px">
             <div class="col-2">
               <input
@@ -402,7 +421,7 @@
         </div>
         <div class="form-group">
           <label for="proficiency"
-            >19. Please indicate your level of Korean proficiency</label
+            >22. Please indicate your level of Korean proficiency</label
           >
           <div class="row" style="margin: 5px">
             <div class="col-2">
@@ -472,18 +491,41 @@
               text-align: center;
             "
           >
-            Appendix II: Statement of Interest
+             Statement of Interest
           </div>
 
           <p>
-            In no more than 1000 words, please explain why you want to
-            participate in the International Networking Camp 2022 and how the
-            Program may benefit you; describe your possible contribution to the
-            Program.
+            In no more than 500 words, please describe why you want to participate in 
+            the KDU Global Immersion Program 2023 and how the program may benefit you. 
+            List your possible contributions to the program and KDU Global e.g., 
+            social media promotions, networking awareness channels, cultural performances 
+            and presentations, community service projects, etc. 
           </p>
 
           <textarea name="Statement" style="width: 100%" rows="20"></textarea>
         </div>
+
+        <div
+            style="
+              margin-top: 5%;
+              color: green;
+              font-weight: bolder;
+              font-size: 1rem;
+              justify-content: center;
+              text-align: center;
+            "
+          >
+             Upload the Required Documents in one PDF format
+          </div>
+
+          <div class="form-group">
+            <label for="docs">Choose file:</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="docs" name="docs" required>
+              <label class="custom-file-label" for="docs">Choose file</label>
+            </div>
+          </div>
+          
         
         <button
           type="submit"
@@ -494,6 +536,8 @@
         </button>
       </form>
     </div>
+
+    
 
     <script>
       $(document).ready(() => {
@@ -526,5 +570,22 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Include Bootstrap Datepicker JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    // Initialize the datepicker
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      startDate: '-35y',
+      endDate: '-13y', // Set the maximum date to 18 years ago
+      autoclose: true
+    });
+  </script>
   </body>
 </html>

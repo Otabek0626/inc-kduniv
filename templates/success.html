@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Successfully Uploaded</title>
+    <style>
+      /* Basic styles for the message container */
+      .message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Styles for the checkmark icon */
+      .icon {
+        font-size: 72px;
+        color: #28a745;
+        margin-bottom: 16px;
+      }
+      
+      /* Styles for the message text */
+      .text {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin-bottom: 16px;
+      }
+      
+      /* Styles for the link back to the upload page */
+      .link {
+        font-size: 16px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      
+      /* Hover styles for the link */
+      .link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message">
+      <i class="icon fas fa-check-circle"></i>
+      <p class="text">You have successfully submitted your application to KDU Global Immersion Program 2023!
+        The Admissions Committee will contact you upon reviewing your application documents.
+        Please refrain from submitting more than one application as it will significantly delay your application processing.
+        Thank you!
+        </p>
+      <a href="{% url 'main' %}">Go to main page</a>
+    </div>
+  </body>
+</html>

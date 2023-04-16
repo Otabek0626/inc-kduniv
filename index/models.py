@@ -4,9 +4,12 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 def upload_location(instance, filename):
-    filebase, extension = filename.split('.')
+    extension = filename.split('.')[-1]
     return 'static/assets/images/%s.%s' % (f'{instance.email}_{instance.first_name}', extension)
 
+def upload_docs(instance, filename):
+    extension = filename.split('.')[-1]
+    return 'static/assets/docs/%s.%s' % (f'{instance.email}_{instance.first_name}_docs', extension)
 
 class Navigation(models.Model):
     title = models.CharField(max_length = 100)
@@ -33,7 +36,7 @@ class Content(models.Model):
 
 class Profile(models.Model):
     first_name = models.CharField(max_length = 50)
-    middle_name = models.CharField(max_length = 50)
+    dateofbirth = models.DateTimeField(blank = False)
     last_name = models.CharField(max_length = 50)
     gender = models.CharField(max_length = 50)
     image = models.ImageField(upload_to = upload_location)
@@ -55,6 +58,7 @@ class Profile(models.Model):
     english = models.CharField(max_length = 50)
     korean = models.CharField(max_length = 50)
     statement_of_interest = models.TextField()
+    docs = models.FileField(upload_to = upload_docs)
     applied_at = models.DateTimeField(default=datetime.now, blank=True)
     
     def __str__(self):
